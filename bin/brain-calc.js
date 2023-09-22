@@ -34,4 +34,4 @@ const calcGame = () => {
   }
 };
 
-evenOrNot();
+calcGame();
