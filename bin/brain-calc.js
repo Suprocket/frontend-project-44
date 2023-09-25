@@ -16,13 +16,30 @@ const calcGame = () => {
     const arrOfOperations = ['+','-','/','*'];
     const randomNumOfOperation = Math.floor(Math.random() * arrOfOperations.length);
     const randomOperation =  arrOfOperations[randomNumOfOperation];
+    let correctAnswer = 0;
 
-    const userAnswer = readlineSync.question(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2} \n`);
-    if (userAnswer === Number(`${randomNumber1} ${randomOperation} ${randomNumber2}`)) {
+    switch(randomOperation){
+      case '+':
+        correctAnswer = randomNumber1 + randomNumber2;
+        break;
+      case '-':
+        correctAnswer = randomNumber1 - randomNumber2;
+        break;
+      case '*':
+        correctAnswer = randomNumber1 * randomNumber2;
+        break;
+      case '/':
+        correctAnswer = Math.floor(randomNumber1 / randomNumber2);
+        break;
+    }
+
+    const userAnswer = Number(readlineSync.question(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2} \n`));
+    if (userAnswer === correctAnswer) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-        const correctAnswer = Number(`${randomNumber1} ${randomOperation} ${randomNumber2}`);
+        console.log(typeof(correctAnswer));
+        console.log(typeof(userAnswer));
         console.log(`'${userAnswer}' is wrong answer. Correct answer was '${correctAnswer}'`);
         break;
     }
