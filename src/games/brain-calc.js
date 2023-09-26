@@ -1,22 +1,29 @@
 import readlineSync from "readline-sync";
 
 const calcGame = () => {
-  console.log("What is the result of the expression?");
+  console.log("What is the result of the expression?\n");
 
-  const randomNumber1 = Math.floor(Math.random() * 100);
-  const randomNumber2 = Math.floor(Math.random() * 100);
-  const arrOfOperations = ["+", "-", "/", "*"];
-  const randomNumOfOperation = Math.floor(
-    Math.random() * arrOfOperations.length
-  );
-  const randomOperation = arrOfOperations[randomNumOfOperation];
+  let randomNumber1 = 1;
+  let randomNumber2 = 1;
+  let randomOperation = "";
+
+  const getQuestion = () => {
+    randomNumber1 = Math.floor(Math.random() * 100);
+    randomNumber2 = Math.floor(Math.random() * 100);
+
+    const arrOfOperations = ["+", "-", "/", "*"];
+    let randomNumOfOperation = Math.floor(
+      Math.random() * arrOfOperations.length
+    );
+
+    randomOperation = arrOfOperations[randomNumOfOperation];
+    let randomString = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
+    console.log(`Question: ${randomString}`);
+    return randomString;
+  };
 
   const userAnswer = (answer) => {
-    answer = Number(
-      readlineSync.question(
-        `Question: ${randomNumber1} ${randomOperation} ${randomNumber2} \n`
-      )
-    );
+    answer = Number(readlineSync.question(`Your answer: `));
     return answer;
   };
 
@@ -36,6 +43,7 @@ const calcGame = () => {
     }
   };
   return {
+    getQuestion,
     userAnswer,
     compAnswer,
   };
