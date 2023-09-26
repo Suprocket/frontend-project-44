@@ -1,4 +1,6 @@
-import { getYourName, runTheGame } from "./logic.js";
+import { getYourName, runTheGame, welcome } from "./logic.js";
+
+welcome();
 
 getYourName();
 runTheGame();

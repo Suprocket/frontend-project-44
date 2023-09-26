@@ -11,8 +11,8 @@ const calcGame = () => {
   );
   const randomOperation = arrOfOperations[randomNumOfOperation];
 
-  const userAnswer = () => {
-    const answer = Number(
+  const userAnswer = (answer) => {
+    answer = Number(
       readlineSync.question(
         `Question: ${randomNumber1} ${randomOperation} ${randomNumber2} \n`
       )
@@ -20,22 +20,21 @@ const calcGame = () => {
     return answer;
   };
 
-  const compAnswer = () => {
+  const compAnswer = (answer) => {
     switch (randomOperation) {
       case "+":
-        return randomNumber1 + randomNumber2;
+        return (answer = randomNumber1 + randomNumber2);
       case "-":
-        return randomNumber1 - randomNumber2;
+        return (answer = randomNumber1 - randomNumber2);
       case "*":
-        return randomNumber1 * randomNumber2;
+        return (answer = randomNumber1 * randomNumber2);
       case "/":
-        return Math.floor(randomNumber1 / randomNumber2);
+        return (answer = Math.floor(randomNumber1 / randomNumber2));
       default:
         console.log("Error in switch/case of randomOperation");
         break;
     }
   };
-
   return {
     userAnswer,
     compAnswer,

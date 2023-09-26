@@ -4,8 +4,12 @@ import evenOrNot from "./games/brain-even.js";
 
 let name = "";
 
+const welcome = () => {
+  console.log("Welcome to the Brain Games!");
+};
+
 const getYourName = () => {
-  name = readlineSync.question("Hey! What's your name?: ");
+  name = readlineSync.question("May I have your name? ");
   console.log(`Hello ${name}`);
   return name;
 };
@@ -44,23 +48,10 @@ const gameLogic = (currentGame) => {
   }
 
   if (correctAnswers === 3) {
-    console.log(`Congratulations, ${name}`);
+    console.log(`Congratulations, ${name}!`);
   } else {
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}.`);
   }
 };
 
-export { getYourName, runTheGame, gameLogic };
-
-//1. Запускаем игру
-// 2. Выбираем игру
-//  3. Запускаем цикл
-//   3. Задаем вопрос
-//   4. Получаем ответ
-//   5. Сравниваем ответ
-//   6. Говорим правильно или нет
-//       Если неправильно выходим
-//       Если правильно Идем дальше
-//
-//
-//
+export { getYourName, runTheGame, gameLogic, welcome };
