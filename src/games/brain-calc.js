@@ -1,59 +1,45 @@
-import readlineSync from 'readline-sync';
-
-console.log('What is the result of the expression?');
+import readlineSync from "readline-sync";
 
 const calcGame = () => {
-  let correctAnswers = 0;
-  while (correctAnswers < 3) {
-    const randomNumber1 = Math.floor(Math.random() * 100);
-    const randomNumber2 = Math.floor(Math.random() * 100);
-    const arrOfOperations = ['+', '-', '/', '*'];
-    const randomNumOfOperation = Math.floor(
-      Math.random() * arrOfOperations.length,
-    );
-    const randomOperation = arrOfOperations[randomNumOfOperation];
-    let correctAnswer = 0;
+  console.log("What is the result of the expression?");
 
-    switch (randomOperation) {
-      case '+':
-        correctAnswer = randomNumber1 + randomNumber2;
-        break;
-      case '-':
-        correctAnswer = randomNumber1 - randomNumber2;
-        break;
-      case '*':
-        correctAnswer = randomNumber1 * randomNumber2;
-        break;
-      case '/':
-        correctAnswer = Math.floor(randomNumber1 / randomNumber2);
-        break;
-      default:
-        console.log('Error in switch/case of randomOperation');
-        break;
-    }
+  const randomNumber1 = Math.floor(Math.random() * 100);
+  const randomNumber2 = Math.floor(Math.random() * 100);
+  const arrOfOperations = ["+", "-", "/", "*"];
+  const randomNumOfOperation = Math.floor(
+    Math.random() * arrOfOperations.length
+  );
+  const randomOperation = arrOfOperations[randomNumOfOperation];
 
-    const userAnswer = Number(
+  const userAnswer = () => {
+    const answer = Number(
       readlineSync.question(
-        `Question: ${randomNumber1} ${randomOperation} ${randomNumber2} \n`,
-      ),
+        `Question: ${randomNumber1} ${randomOperation} ${randomNumber2} \n`
+      )
     );
-    if (userAnswer === correctAnswer) {
-      correctAnswers += 1;
-      console.log('Correct!');
-    } else {
-      console.log(typeof correctAnswer);
-      console.log(typeof userAnswer);
-      console.log(
-        `'${userAnswer}' is wrong answer. Correct answer was '${correctAnswer}'`,
-      );
-      break;
+    return answer;
+  };
+
+  const compAnswer = () => {
+    switch (randomOperation) {
+      case "+":
+        return randomNumber1 + randomNumber2;
+      case "-":
+        return randomNumber1 - randomNumber2;
+      case "*":
+        return randomNumber1 * randomNumber2;
+      case "/":
+        return Math.floor(randomNumber1 / randomNumber2);
+      default:
+        console.log("Error in switch/case of randomOperation");
+        break;
     }
-  }
-  if (correctAnswers === 3) {
-    console.log('Congratulations!');
-  } else {
-    console.log('Lets try again!');
-  }
+  };
+
+  return {
+    userAnswer,
+    compAnswer,
+  };
 };
 
 export default calcGame;
