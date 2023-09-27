@@ -1,6 +1,7 @@
 import readlineSync from "readline-sync";
 import calcGame from "./games/brain-calc.js";
 import evenOrNot from "./games/brain-even.js";
+import playNOD from "./games/brain-gcd.js";
 
 let name = "";
 
@@ -22,6 +23,9 @@ const runTheGame = () => {
       break;
     case "brain-even":
       gameLogic(evenOrNot());
+      break;
+    case "brain-gcd":
+      gameLogic(playNOD());
       break;
     default:
       console.log(

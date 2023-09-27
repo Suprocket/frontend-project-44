@@ -4,3 +4,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/edefe5fe160e4276619c/maintainability)](https://codeclimate.com/github/Suprocket/frontend-project-44/maintainability)
 [![asciicast](https://asciinema.org/a/xxhAQDBttjoRnTbJB9hNqBqNZ.svg)](https://asciinema.org/a/xxhAQDBttjoRnTbJB9hNqBqNZ)
 [![asciicast](https://asciinema.org/a/WjGM7vZ6oMNYP86kcYB70irXQ.svg)](https://asciinema.org/a/WjGM7vZ6oMNYP86kcYB70irXQ)
+[![asciicast](https://asciinema.org/a/4MrFpoehtTMG2QYOkZEACPgNh.svg)](https://asciinema.org/a/4MrFpoehtTMG2QYOkZEACPgNh)
