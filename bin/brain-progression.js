@@ -16,40 +16,40 @@ const playProgression = () => {
     let numsInArr = Math.floor(Math.random() * 10) + 5;
     let arrOfNumbers = [];
 
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     for (let i = 0; i < numsInArr; i += 1) {
       randomNumber += step;
       arrOfNumbers.push(randomNumber);
-      console.log(arrOfNumbers);
     }
+
+    let addIndexForPoints = getRandomInt(0, arrOfNumbers.length - 1);
+
+    let compAnswer = Number(arrOfNumbers.splice(addIndexForPoints, 1, "..."));
 
     const userAnswer = Number(
       readlineSync.question(`Question: ${arrOfNumbers}\n`)
     );
 
-    // while ((randomNumber1 != 0) & (randomNumber2 != 0)) {
-    //   if (randomNumber1 > randomNumber2) {
-    //     randomNumber1 = randomNumber1 % randomNumber2;
-    //   } else {
-    //     randomNumber2 = randomNumber2 % randomNumber1;
-    //   }
-    // }
-
-    // const compAnswer = randomNumber1 + randomNumber2;
-    // if (userAnswer === compAnswer) {
-    //   console.log("Correct!");
-    //   correctAnswers += 1;
-    // } else {
-    //   console.log(
-    //     `'${userAnswer}' is wrong answer ;(. Correct answer was ${compAnswer}.`
-    //   );
-    //   break;
-    // }
+    if (userAnswer === compAnswer) {
+      console.log("Correct!");
+      correctAnswers += 1;
+    } else {
+      console.log(
+        `'${userAnswer}' is wrong answer ;(. Correct answer was ${compAnswer}.`
+      );
+      break;
+    }
   }
-  //   if (correctAnswers === 3) {
-  //     console.log(`Congratulations, ${name}`);
-  //   } else {
-  //     console.log(`Let's try again, ${name}`);
-  //   }
+  if (correctAnswers === 3) {
+    console.log(`Congratulations, ${name}`);
+  } else {
+    console.log(`Let's try again, ${name}`);
+  }
 };
 
 playProgression();
