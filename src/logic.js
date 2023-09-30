@@ -3,6 +3,7 @@ import calcGame from "./games/brain-calc.js";
 import evenOrNot from "./games/brain-even.js";
 import playNOD from "./games/brain-gcd.js";
 import playProgression from "./games/brain-progression.js";
+import isPrime from "./games/brain-prime.js";
 
 let name = "";
 
@@ -30,6 +31,9 @@ const runTheGame = () => {
       break;
     case "brain-progression":
       gameLogic(playProgression());
+      break;
+    case "brain-prime":
+      gameLogic(isPrime());
       break;
     default:
       console.log(
