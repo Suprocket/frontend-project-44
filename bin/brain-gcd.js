@@ -36,9 +36,9 @@ const playNOD = () => {
     }
   }
   if (correctAnswers === 3) {
-    console.log(`Congratulations, ${name}`);
+    console.log(`Congratulations, ${name}!`);
   } else {
-    console.log(`Let's try again, ${name}`);
+    console.log(`Let's try again, ${name}!`);
   }
 };
 
