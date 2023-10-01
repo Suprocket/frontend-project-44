@@ -1,4 +1,4 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const evenOrNot = () => {
   console.log('\nAnswer "yes" if the number is even, otherwise answer "no".\n');
@@ -12,17 +12,20 @@ const evenOrNot = () => {
   };
 
   const userAnswer = (answer) => {
-    answer = readlineSync.question(`Your answer: `);
-    return answer;
+    let userans = answer;
+    userans = readlineSync.question('Your answer: ');
+    return userans;
   };
 
   const compAnswer = (answer) => {
-    let isEven = randomNumber % 2 === 0;
+    let compans = answer;
+    const isEven = randomNumber % 2 === 0;
     if (isEven) {
-      return (answer = "yes");
+      compans = 'yes';
     } else {
-      return (answer = "no");
+      compans = 'no';
     }
+    return compans;
   };
 
   return {

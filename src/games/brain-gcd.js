@@ -1,7 +1,7 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const playNOD = () => {
-  console.log("\nFind the greatest common divisor of given numbers.");
+  console.log('\nFind the greatest common divisor of given numbers.');
 
   let randomNumber1 = 1;
   let randomNumber2 = 1;
@@ -10,26 +10,28 @@ const playNOD = () => {
     randomNumber1 = Math.floor(Math.random() * 100);
     randomNumber2 = Math.floor(Math.random() * 100);
 
-    let randomString = `${randomNumber1} ${randomNumber2}`;
+    const randomString = `${randomNumber1} ${randomNumber2}`;
     console.log(`Question: ${randomNumber1} ${randomNumber2}\n`);
     return randomString;
   };
 
   const userAnswer = (answer) => {
-    answer = Number(readlineSync.question(`Your answer: `));
-    return answer;
+    let userans = answer;
+    userans = Number(readlineSync.question('Your answer: '));
+    return userans;
   };
 
   const compAnswer = (answer) => {
-    while ((randomNumber1 != 0) & (randomNumber2 != 0)) {
+    let compans = answer;
+    while ((randomNumber1 !== 0) && (randomNumber2 !== 0)) {
       if (randomNumber1 > randomNumber2) {
-        randomNumber1 = randomNumber1 % randomNumber2;
+        randomNumber1 %= randomNumber2;
       } else {
-        randomNumber2 = randomNumber2 % randomNumber1;
+        randomNumber2 %= randomNumber1;
       }
     }
-    answer = randomNumber1 + randomNumber2;
-    return answer;
+    compans = randomNumber1 + randomNumber2;
+    return compans;
   };
 
   return {

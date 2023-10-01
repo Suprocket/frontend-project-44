@@ -1,4 +1,4 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const isPrime = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -12,15 +12,17 @@ const isPrime = () => {
   };
 
   const userAnswer = (answer) => {
-    answer = readlineSync.question(`Your answer: `);
-    return answer;
+    let userans = answer;
+    userans = readlineSync.question('Your answer: ');
+    return userans;
   };
 
   const compAnswer = (answer) => {
+    let compans = answer;
     const primeOrNot = (number) => {
       if (number < 2) return false;
       if (number === 4) return false;
-      for (let i = 2; i < number / 2; i++) {
+      for (let i = 2; i < number / 2; i += 1) {
         if (number % i === 0) {
           return false;
         }
@@ -29,10 +31,11 @@ const isPrime = () => {
     };
 
     if (primeOrNot(randomNumber) === true) {
-      return (answer = "yes");
+      compans = 'yes';
     } else {
-      return (answer = "no");
+      compans = 'no';
     }
+    return compans;
   };
 
   return {

@@ -1,46 +1,20 @@
-import readlineSync from "readline-sync";
-import calcGame from "./games/brain-calc.js";
-import evenOrNot from "./games/brain-even.js";
-import playNOD from "./games/brain-gcd.js";
-import playProgression from "./games/brain-progression.js";
-import isPrime from "./games/brain-prime.js";
+import readlineSync from 'readline-sync';
+import calcGame from './games/brain-calc.js';
+import evenOrNot from './games/brain-even.js';
+import playNOD from './games/brain-gcd.js';
+import playProgression from './games/brain-progression.js';
+import isPrime from './games/brain-prime.js';
 
-let name = "";
+let name = '';
 
 const welcome = () => {
-  console.log("Welcome to the Brain Games!\n");
+  console.log('Welcome to the Brain Games!\n');
 };
 
 const getYourName = () => {
-  name = readlineSync.question("May I have your name?:\n ");
+  name = readlineSync.question('May I have your name?:\n ');
   console.log(`\nHello ${name}\n`);
   return name;
-};
-
-const runTheGame = () => {
-  const game = readlineSync.question("What game do you want to play?\n ");
-  switch (game) {
-    case "brain-calc":
-      gameLogic(calcGame());
-      break;
-    case "brain-even":
-      gameLogic(evenOrNot());
-      break;
-    case "brain-gcd":
-      gameLogic(playNOD());
-      break;
-    case "brain-progression":
-      gameLogic(playProgression());
-      break;
-    case "brain-prime":
-      gameLogic(isPrime());
-      break;
-    default:
-      console.log(
-        "I don't know this game. Type me 'brain-calc','brain-even','brain-gcd','brain-progression' and try again."
-      );
-      break;
-  }
 };
 
 const gameLogic = (currentGame) => {
@@ -51,10 +25,10 @@ const gameLogic = (currentGame) => {
     const compAns = currentGame.compAnswer();
     if (userAns === compAns) {
       correctAnswers += 1;
-      console.log("Correct!\n");
+      console.log('Correct!\n');
     } else {
       console.log(
-        `'${userAns}' is wrong answer. Correct answer was '${compAns}'\n`
+        `'${userAns}' is wrong answer. Correct answer was '${compAns}'\n`,
       );
       break;
     }
@@ -67,4 +41,32 @@ const gameLogic = (currentGame) => {
   }
 };
 
-export { getYourName, runTheGame, gameLogic, welcome };
+const runTheGame = () => {
+  const game = readlineSync.question('What game do you want to play?\n ');
+  switch (game) {
+    case 'brain-calc':
+      gameLogic(calcGame());
+      break;
+    case 'brain-even':
+      gameLogic(evenOrNot());
+      break;
+    case 'brain-gcd':
+      gameLogic(playNOD());
+      break;
+    case 'brain-progression':
+      gameLogic(playProgression());
+      break;
+    case 'brain-prime':
+      gameLogic(isPrime());
+      break;
+    default:
+      console.log(
+        "I don't know this game. Type me 'brain-calc','brain-even','brain-gcd','brain-progression' and try again.",
+      );
+      break;
+  }
+};
+
+export {
+  getYourName, runTheGame, gameLogic, welcome,
+};
