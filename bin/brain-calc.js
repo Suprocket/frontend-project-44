@@ -7,7 +7,7 @@ const calcGame = () => {
   let correctAnswers = 0;
   const name = readlineSync.question('May I have your name?: ');
 
-  console.log(`Hello ${name}`);
+  console.log(`Hello, ${name}`);
   console.log('What is the result of the expression?');
 
   while (correctAnswers < 3) {

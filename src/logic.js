@@ -13,7 +13,7 @@ const welcome = () => {
 
 const getYourName = () => {
   name = readlineSync.question('May I have your name?:\n ');
-  console.log(`\nHello ${name}\n`);
+  console.log(`\nHello, ${name}\n`);
   return name;
 };
 

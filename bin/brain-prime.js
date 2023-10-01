@@ -7,7 +7,7 @@ const isPrime = () => {
   let correctAnswers = 0;
   const name = readlineSync.question('May I have your name?: ');
 
-  console.log(`Hello ${name}`);
+  console.log(`Hello, ${name}`);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   while (correctAnswers < 3) {

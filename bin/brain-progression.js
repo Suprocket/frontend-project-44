@@ -15,7 +15,7 @@ const playProgression = () => {
 
   const name = readlineSync.question('May I have your name?: ');
 
-  console.log(`Hello ${name}!`);
+  console.log(`Hello, ${name}!`);
   console.log('What number is missing in the progression?');
 
   while (correctAnswers < 3) {
