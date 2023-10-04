@@ -13,7 +13,8 @@ const evenOrNot = () => {
   while (correctAnswers < 3) {
     const randomNumber = Math.floor(Math.random() * 100);
     const isEven = randomNumber % 2 === 0;
-    const userAnswer = readlineSync.question(`Question: ${randomNumber} \n`);
+    console.log(`Question: ${randomNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     if ((isEven && userAnswer === 'yes') || (!isEven && userAnswer === 'no')) {
       correctAnswers += 1;
       console.log('Correct!');

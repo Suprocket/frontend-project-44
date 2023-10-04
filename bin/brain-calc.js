@@ -5,15 +5,15 @@ console.log('Welcome to the Brain Games!');
 
 const calcGame = () => {
   let correctAnswers = 0;
-  const name = readlineSync.question('May I have your name?: ');
+  const name = readlineSync.question('May I have your name? ');
 
-  console.log(`Hello, ${name}`);
+  console.log(`Hello, ${name}!`);
   console.log('What is the result of the expression?');
 
   while (correctAnswers < 3) {
     const randomNumber1 = Math.floor(Math.random() * 100);
     const randomNumber2 = Math.floor(Math.random() * 100);
-    const arrOfOperations = ['+', '-', '/', '*'];
+    const arrOfOperations = ['+', '-', '*'];
     const randomNumOfOperation = Math.floor(
       Math.random() * arrOfOperations.length,
     );
@@ -29,9 +29,6 @@ const calcGame = () => {
         break;
       case '*':
         correctAnswer = randomNumber1 * randomNumber2;
-        break;
-      case '/':
-        correctAnswer = Math.floor(randomNumber1 / randomNumber2);
         break;
       default:
         console.log('Error in switch/case of randomOperation');
