@@ -5,7 +5,7 @@ console.log('Welcome to the Brain Games!');
 
 const playNOD = () => {
   let correctAnswers = 0;
-  const name = readlineSync.question('May I have your name?: ');
+  const name = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${name}`);
   console.log('Find the greatest common divisor of given numbers.');
@@ -13,9 +13,9 @@ const playNOD = () => {
   while (correctAnswers < 3) {
     let randomNumber1 = Math.floor(Math.random() * 100);
     let randomNumber2 = Math.floor(Math.random() * 100);
-    const userAnswer = Number(
-      readlineSync.question(`Question: ${randomNumber1} ${randomNumber2}\n`),
-    );
+
+    console.log(`Question: ${randomNumber1} ${randomNumber2}`);
+    const userAnswer = Number(readlineSync.question('Your answer: '));
 
     while ((randomNumber1 !== 0) && (randomNumber2 !== 0)) {
       if (randomNumber1 > randomNumber2) {
