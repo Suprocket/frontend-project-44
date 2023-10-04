@@ -12,7 +12,9 @@ const isPrime = () => {
 
   while (correctAnswers < 3) {
     const randomNumber = Math.floor(Math.random() * 100);
-    const userAnswer = readlineSync.question(`Question: ${randomNumber} \n`);
+
+    console.log(`Question: ${randomNumber}`);
+    const userAnswer = (readlineSync.question('Your answer: '));
 
     const primeOrNot = (number) => {
       if (number < 2) return false;
