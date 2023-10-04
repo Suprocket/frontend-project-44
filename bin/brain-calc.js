@@ -41,8 +41,6 @@ const calcGame = () => {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(typeof correctAnswer);
-      console.log(typeof userAnswer);
       console.log(
         `'${userAnswer}' is wrong answer. Correct answer was '${correctAnswer}'`,
       );
