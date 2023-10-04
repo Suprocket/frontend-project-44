@@ -7,7 +7,7 @@ const evenOrNot = () => {
   let correctAnswers = 0;
   const name = readlineSync.question('May I have your name?: ');
 
-  console.log(`Hello, ${name}`);
+  console.log(`Hello, ${name}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   while (correctAnswers < 3) {
