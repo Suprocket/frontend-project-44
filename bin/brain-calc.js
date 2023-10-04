@@ -35,11 +35,8 @@ const calcGame = () => {
         break;
     }
 
-    const userAnswer = Number(
-      readlineSync.question(
-        `Question: ${randomNumber1} ${randomOperation} ${randomNumber2} \n`,
-      ),
-    );
+    console.log(`Question: ${randomNumber1} ${randomOperation} ${randomNumber2}`);
+    const userAnswer = Number(readlineSync.question('Your answer: '));
     if (userAnswer === correctAnswer) {
       correctAnswers += 1;
       console.log('Correct!');
