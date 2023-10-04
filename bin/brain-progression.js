@@ -33,7 +33,7 @@ const playProgression = () => {
 
     const compAnswer = Number(arrOfNumbers.splice(addIndexForPoints, 1, '...'));
 
-    console.log(`Question: ${arrOfNumbers}`);
+    console.log(`Question: ${arrOfNumbers.join(' ')}`);
     const userAnswer = Number(readlineSync.question('Your answer: '));
 
     if (userAnswer === compAnswer) {
