@@ -1,20 +1,14 @@
-import readlineSync from 'readline-sync';
+import engine from "../index.js";
 
 const evenOrNot = () => {
-  console.log('\nAnswer "yes" if the number is even, otherwise answer "no".\n');
+
+  const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   let randomNumber = 1;
 
-  const getQuestion = () => {
+  const gameQuestion = () => {
     randomNumber = Math.floor(Math.random() * 100);
-    console.log(`Question: ${randomNumber}`);
     return randomNumber;
-  };
-
-  const userAnswer = (answer) => {
-    let userans = answer;
-    userans = readlineSync.question('Your answer: ');
-    return userans;
   };
 
   const compAnswer = (answer) => {
@@ -28,11 +22,7 @@ const evenOrNot = () => {
     return compans;
   };
 
-  return {
-    getQuestion,
-    userAnswer,
-    compAnswer,
-  };
+  engine(gameRules, gameQuestion, compAnswer);
 };
 
 export default evenOrNot;
