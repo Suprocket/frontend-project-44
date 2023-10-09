@@ -4,23 +4,26 @@ let correctAnswers = 0;
 
 const engine = (gameRules, gameQuestion, compAnswer) => {
     
-    console.log('Welcome to the Brain Games!\n');
+    console.log('Welcome to the Brain Games!');
 
-    const name = readlineSync.question('May I have your name?:\n ');
-    console.log(`\nHello, ${name}\n`);
+    const name = readlineSync.question('May I have your name?: ');
+    console.log(`Hello, ${name}`);
 
     console.log(gameRules);
 
     while (correctAnswers < 3){
-        console.log(`Question: ${gameQuestion}`);
+        console.log(`Question: ${gameQuestion()}`);
         const userAnswer = (readlineSync.question('Your answer: '));
         
         const isCorrect = (userAnswer, compAnswer) => {
-            if (userAnswer === compAnswer){
+            if (userAnswer === compAnswer()){
                 correctAnswers += 1;
                 console.log('Correct!');
             }else{
-                console.log(`'${userAnswer}' is wrong answer. Correct answer was '${compAnswer}'`);
+                console.log(`'${userAnswer}' is wrong answer. Correct answer was '${compAnswer()}'`);
+
+                // Костыль ниже!!
+
                 correctAnswers = 4;
             }
         }

@@ -1,4 +1,5 @@
 import engine from "../index.js";
+import getRandom from "../utils.js";
 
 const playProgression = () => {
   const gameRules = 'What number is missing in the progression?';
@@ -15,7 +16,7 @@ const playProgression = () => {
 
   const gameQuestion = () => {
     const arrOfNumbers = [];
-    let randomNumber = Math.floor(Math.random() * 100);
+    let randomNumber = getRandom();
     const step = Math.floor(Math.random() * 10);
     const numsInArr = Math.floor(Math.random() * 10) + 5;
 
@@ -26,8 +27,6 @@ const playProgression = () => {
     const addIndexForPoints = getRandomInt(0, arrOfNumbers.length - 1);
 
     answerNum = Number(arrOfNumbers.splice(addIndexForPoints, 1, '...'));
-
-    console.log(`Question: ${arrOfNumbers}\n`);
     return arrOfNumbers;
   };
 
@@ -36,7 +35,7 @@ const playProgression = () => {
     compans = answerNum;
     return String(compans);
   };
-  engine(gameRules, gameQuestion(), compAnswer());
+  engine(gameRules, gameQuestion, compAnswer);
 
 };
 

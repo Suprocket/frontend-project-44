@@ -1,4 +1,5 @@
 import engine from "../index.js";
+import getRandom from "../utils.js";
 
 const calcGame = () => {
   const gameRules = 'What is the result of the expression?';
@@ -8,8 +9,8 @@ const calcGame = () => {
   let randomOperation = '';
 
   const gameQuestion = () => {
-    randomNumber1 = Math.floor(Math.random() * 100);
-    randomNumber2 = Math.floor(Math.random() * 100);
+    randomNumber1 = getRandom();
+    randomNumber2 = getRandom();
 
     const arrOfOperations = ['+', '-', '*'];
     const randomNumOfOperation = Math.floor(
@@ -41,7 +42,7 @@ const calcGame = () => {
     return String(funcAns);
   };
 
-  engine(gameRules, gameQuestion(), compAnswer());
+  engine(gameRules, gameQuestion, compAnswer);
 };
 
 export default calcGame;

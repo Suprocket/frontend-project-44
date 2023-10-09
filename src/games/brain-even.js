@@ -1,4 +1,5 @@
 import engine from "../index.js";
+import getRandom from "../utils.js";
 
 const evenOrNot = () => {
 
@@ -7,7 +8,7 @@ const evenOrNot = () => {
   let randomNumber = 1;
 
   const gameQuestion = () => {
-    randomNumber = Math.floor(Math.random() * 100);
+    randomNumber = getRandom();
     return randomNumber;
   };
 
@@ -22,7 +23,7 @@ const evenOrNot = () => {
     return compans;
   };
 
-  engine(gameRules, gameQuestion(), compAnswer());
+  engine(gameRules, gameQuestion, compAnswer);
 };
 
 export default evenOrNot;

@@ -1,4 +1,5 @@
 import engine from "../index.js";
+import getRandom from "../utils.js";
 
 const playNOD = () => {
   const gameRules = 'What is the result of the expression?';
@@ -7,8 +8,8 @@ const playNOD = () => {
   let randomNumber2 = 1;
 
   const gameQuestion = () => {
-    randomNumber1 = Math.floor(Math.random() * 100);
-    randomNumber2 = Math.floor(Math.random() * 100);
+    randomNumber1 = getRandom();
+    randomNumber2 = getRandom();
 
     const randomString = `${randomNumber1} ${randomNumber2}`;
     return randomString;
@@ -27,7 +28,7 @@ const playNOD = () => {
     return String(compans);
   };
 
-  engine(gameRules, gameQuestion(), compAnswer());
+  engine(gameRules, gameQuestion, compAnswer);
 };
 
 export default playNOD;

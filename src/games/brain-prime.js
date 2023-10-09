@@ -1,4 +1,5 @@
 import engine from "../index.js";
+import getRandom from "../utils.js";
 
 const isPrime = () => {
   const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -6,7 +7,7 @@ const isPrime = () => {
   let randomNumber = 1;
 
   const gameQuestion = () => {
-    randomNumber = Math.floor(Math.random() * 100);
+    randomNumber = getRandom();
     return randomNumber;
   };
 
@@ -31,7 +32,7 @@ const isPrime = () => {
     return compans;
   };
 
-  engine(gameRules, gameQuestion(), compAnswer());
+  engine(gameRules, gameQuestion, compAnswer);
 };
 
 export default isPrime;
