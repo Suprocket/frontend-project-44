@@ -1,5 +1,5 @@
-import engine from "../index.js";
-import getRandom from "../utils.js";
+import engine from '../index.js';
+import getRandom from '../utils.js';
 
 const calcGame = () => {
   const gameRules = 'What is the result of the expression?';

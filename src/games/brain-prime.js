@@ -1,5 +1,5 @@
-import engine from "../index.js";
-import getRandom from "../utils.js";
+import engine from '../index.js';
+import getRandom from '../utils.js';
 
 const isPrime = () => {
   const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';

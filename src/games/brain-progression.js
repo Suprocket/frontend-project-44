@@ -1,5 +1,5 @@
-import engine from "../index.js";
-import getRandom from "../utils.js";
+import engine from '../index.js';
+import getRandom from '../utils.js';
 
 const playProgression = () => {
   const gameRules = 'What number is missing in the progression?';
@@ -36,7 +36,6 @@ const playProgression = () => {
     return String(compans);
   };
   engine(gameRules, gameQuestion, compAnswer);
-
 };
 
 export default playProgression;
