@@ -20,7 +20,7 @@ const isPrime = () => {
       }
       return true;
     };
-    primeOrNot(randomNumber) === true ? compans = 'yes': compans = 'no';
+    compans = primeOrNot(randomNumber) === true ? compans = 'yes' : compans = 'no';
     return compans;
   };
   engine(gameRules, gameQuestion, compAnswer);
