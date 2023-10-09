@@ -29,7 +29,7 @@ const engine = (gameRules, gameQuestion, compAnswer) => {
   if (correctAnswers === 3) {
     console.log(`Congratulations, ${name}!`);
   } else {
-    console.log(`Let's try again, ${name}.`);
+    console.log(`Let's try again, ${name}!`);
   }
 
   return [
@@ -40,7 +40,3 @@ const engine = (gameRules, gameQuestion, compAnswer) => {
 };
 
 export default engine;
-
-// Запустить автотесты
-// Запустить https://codeclimate.com/.
-// Отдать на проверку
