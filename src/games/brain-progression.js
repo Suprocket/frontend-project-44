@@ -26,8 +26,9 @@ const playProgression = () => {
     }
     const addIndexForPoints = getRandomInt(0, arrOfNumbers.length - 1);
 
-    answerNum = Number(arrOfNumbers.splice(addIndexForPoints, 1, '...'));
-    return arrOfNumbers;
+    answerNum = Number(arrOfNumbers.splice(addIndexForPoints, 1, '..'));
+    const strOfNumbers = arrOfNumbers.join(' ');
+    return strOfNumbers;
   };
 
   const compAnswer = (answer) => {
