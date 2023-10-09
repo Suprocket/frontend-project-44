@@ -46,14 +46,6 @@ const engine = (gameRules, gameQuestion, compAnswer) => {
 
 export default engine;
 
-// import { getYourName, runTheGame, welcome } from './logic.js';
-
-// welcome();
-
-// getYourName();
-// runTheGame();
-
-        // Вынести модуль рандомного числа за функции
         // Запустить автотесты
         // Запустить https://codeclimate.com/.
         // Отдать на проверку
