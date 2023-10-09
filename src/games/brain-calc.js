@@ -1,31 +1,24 @@
-import readlineSync from 'readline-sync';
+import engine from "../index.js";
 
 const calcGame = () => {
-  console.log('What is the result of the expression?\n');
+  const gameRules = 'What is the result of the expression?';
 
   let randomNumber1 = 1;
   let randomNumber2 = 1;
   let randomOperation = '';
 
-  const getQuestion = () => {
+  const gameQuestion = () => {
     randomNumber1 = Math.floor(Math.random() * 100);
     randomNumber2 = Math.floor(Math.random() * 100);
 
-    const arrOfOperations = ['+', '-', '/', '*'];
+    const arrOfOperations = ['+', '-', '*'];
     const randomNumOfOperation = Math.floor(
       Math.random() * arrOfOperations.length,
     );
 
     randomOperation = arrOfOperations[randomNumOfOperation];
     const randomString = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
-    console.log(`Question: ${randomString}`);
     return randomString;
-  };
-
-  const userAnswer = (answer) => {
-    let userans = answer;
-    userans = Number(readlineSync.question('Your answer: '));
-    return userans;
   };
 
   const compAnswer = (answer) => {
@@ -41,20 +34,14 @@ const calcGame = () => {
       case '*':
         funcAns = randomNumber1 * randomNumber2;
         break;
-      case '/':
-        funcAns = Math.floor(randomNumber1 / randomNumber2);
-        break;
       default:
         console.log('Error in switch/case of randomOperation');
         break;
     }
-    return funcAns;
+    return String(funcAns);
   };
-  return {
-    getQuestion,
-    userAnswer,
-    compAnswer,
-  };
+
+  engine(gameRules, gameQuestion(), compAnswer());
 };
 
 export default calcGame;

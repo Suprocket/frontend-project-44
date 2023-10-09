@@ -21,7 +21,7 @@ const engine = (gameRules, gameQuestion, compAnswer) => {
                 console.log('Correct!');
             }else{
                 console.log(`'${userAnswer}' is wrong answer. Correct answer was '${compAnswer}'`);
-                return;
+                correctAnswers = 4;
             }
         }
 
@@ -37,7 +37,7 @@ const engine = (gameRules, gameQuestion, compAnswer) => {
     return [
         gameRules,
         gameQuestion,
-        gameAnswer
+        compAnswer
     ]
 } 
 
@@ -50,10 +50,7 @@ export default engine;
 // getYourName();
 // runTheGame();
 
-// Правильно ли реализован isCorrect, и как передавать туда compAnswer.
-        // Проверить на Переписать bin/brain...
-        // Проверить на games/brain.. функциональность.
-        // Переписать остальные, проверить все снова
+        // Вынести модуль рандомного числа за функции
         // Запустить автотесты
         // Запустить https://codeclimate.com/.
         // Отдать на проверку

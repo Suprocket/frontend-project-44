@@ -22,7 +22,7 @@ const evenOrNot = () => {
     return compans;
   };
 
-  engine(gameRules, gameQuestion, compAnswer);
+  engine(gameRules, gameQuestion(), compAnswer());
 };
 
 export default evenOrNot;

@@ -1,20 +1,13 @@
-import readlineSync from 'readline-sync';
+import engine from "../index.js";
 
 const isPrime = () => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   let randomNumber = 1;
 
-  const getQuestion = () => {
+  const gameQuestion = () => {
     randomNumber = Math.floor(Math.random() * 100);
-    console.log(`Question: ${randomNumber}`);
     return randomNumber;
-  };
-
-  const userAnswer = (answer) => {
-    let userans = answer;
-    userans = readlineSync.question('Your answer: ');
-    return userans;
   };
 
   const compAnswer = (answer) => {
@@ -38,11 +31,7 @@ const isPrime = () => {
     return compans;
   };
 
-  return {
-    getQuestion,
-    userAnswer,
-    compAnswer,
-  };
+  engine(gameRules, gameQuestion(), compAnswer());
 };
 
 export default isPrime;

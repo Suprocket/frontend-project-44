@@ -1,7 +1,7 @@
-import readlineSync from 'readline-sync';
+import engine from "../index.js";
 
 const playProgression = () => {
-  console.log('What number is missing in the progression?');
+  const gameRules = 'What number is missing in the progression?';
 
   let answerNum = 0;
 
@@ -13,7 +13,7 @@ const playProgression = () => {
     return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
   }
 
-  const getQuestion = () => {
+  const gameQuestion = () => {
     const arrOfNumbers = [];
     let randomNumber = Math.floor(Math.random() * 100);
     const step = Math.floor(Math.random() * 10);
@@ -28,26 +28,16 @@ const playProgression = () => {
     answerNum = Number(arrOfNumbers.splice(addIndexForPoints, 1, '...'));
 
     console.log(`Question: ${arrOfNumbers}\n`);
-    return answerNum;
-  };
-
-  const userAnswer = (answer) => {
-    let userans = answer;
-    userans = Number(readlineSync.question('Your answer: '));
-    return userans;
+    return arrOfNumbers;
   };
 
   const compAnswer = (answer) => {
     let compans = answer;
     compans = answerNum;
-    return compans;
+    return String(compans);
   };
+  engine(gameRules, gameQuestion(), compAnswer());
 
-  return {
-    getQuestion,
-    userAnswer,
-    compAnswer,
-  };
 };
 
 export default playProgression;

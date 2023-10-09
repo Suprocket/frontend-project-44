@@ -1,24 +1,17 @@
-import readlineSync from 'readline-sync';
+import engine from "../index.js";
 
 const playNOD = () => {
-  console.log('\nFind the greatest common divisor of given numbers.');
+  const gameRules = 'What is the result of the expression?';
 
   let randomNumber1 = 1;
   let randomNumber2 = 1;
 
-  const getQuestion = () => {
+  const gameQuestion = () => {
     randomNumber1 = Math.floor(Math.random() * 100);
     randomNumber2 = Math.floor(Math.random() * 100);
 
     const randomString = `${randomNumber1} ${randomNumber2}`;
-    console.log(`Question: ${randomNumber1} ${randomNumber2}\n`);
     return randomString;
-  };
-
-  const userAnswer = (answer) => {
-    let userans = answer;
-    userans = Number(readlineSync.question('Your answer: '));
-    return userans;
   };
 
   const compAnswer = (answer) => {
@@ -31,14 +24,10 @@ const playNOD = () => {
       }
     }
     compans = randomNumber1 + randomNumber2;
-    return compans;
+    return String(compans);
   };
 
-  return {
-    getQuestion,
-    userAnswer,
-    compAnswer,
-  };
+  engine(gameRules, gameQuestion(), compAnswer());
 };
 
 export default playNOD;
