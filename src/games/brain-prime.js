@@ -3,14 +3,11 @@ import getRandom from '../utils.js';
 
 const isPrime = () => {
   const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
   let randomNumber = 1;
-
   const gameQuestion = () => {
     randomNumber = getRandom();
     return randomNumber;
   };
-
   const compAnswer = (answer) => {
     let compans = answer;
     const primeOrNot = (number) => {
@@ -23,15 +20,9 @@ const isPrime = () => {
       }
       return true;
     };
-
-    if (primeOrNot(randomNumber) === true) {
-      compans = 'yes';
-    } else {
-      compans = 'no';
-    }
+    primeOrNot(randomNumber) === true ? compans = 'yes': compans = 'no';
     return compans;
   };
-
   engine(gameRules, gameQuestion, compAnswer);
 };
 
