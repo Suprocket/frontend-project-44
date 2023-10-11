@@ -1,9 +1,9 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const playProgression = () => {
-  const gameRules = 'What number is missing in the progression?';
+const gameRules = 'What number is missing in the progression?';
 
+const playProgression = () => {
   let answerNum = 0;
 
   function getRandomInt(min, max) {

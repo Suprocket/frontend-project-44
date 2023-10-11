@@ -1,8 +1,9 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
+const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const playEven = () => {
-  const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   let randomNumber = 1;
 

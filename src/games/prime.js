@@ -1,8 +1,9 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const playPrime = () => {
-  const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   let randomNumber = 1;
   const gameQuestion = () => {
     randomNumber = getRandom();

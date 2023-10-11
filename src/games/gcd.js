@@ -1,8 +1,9 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
+const gameRules = 'Find the greatest common divisor of given numbers.';
+
 const playGCD = () => {
-  const gameRules = 'Find the greatest common divisor of given numbers.';
 
   let randomNumber1 = 1;
   let randomNumber2 = 1;
