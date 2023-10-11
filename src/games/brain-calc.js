@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const calcGame = () => {
+const playCalc = () => {
   const gameRules = 'What is the result of the expression?';
 
   let randomNumber1 = 1;
@@ -45,4 +45,4 @@ const calcGame = () => {
   engine(gameRules, gameQuestion, compAnswer);
 };
 
-export default calcGame;
+export default playCalc;

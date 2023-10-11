@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const playNOD = () => {
+const playGCD = () => {
   const gameRules = 'Find the greatest common divisor of given numbers.';
 
   let randomNumber1 = 1;
@@ -31,4 +31,4 @@ const playNOD = () => {
   engine(gameRules, gameQuestion, compAnswer);
 };
 
-export default playNOD;
+export default playGCD;

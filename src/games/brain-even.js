@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const evenOrNot = () => {
+const playEven = () => {
   const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   let randomNumber = 1;
@@ -25,4 +25,4 @@ const evenOrNot = () => {
   engine(gameRules, gameQuestion, compAnswer);
 };
 
-export default evenOrNot;
+export default playEven;

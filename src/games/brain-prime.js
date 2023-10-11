@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const isPrime = () => {
+const playPrime = () => {
   const gameRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   let randomNumber = 1;
   const gameQuestion = () => {
@@ -26,4 +26,4 @@ const isPrime = () => {
   engine(gameRules, gameQuestion, compAnswer);
 };
 
-export default isPrime;
+export default playPrime;
