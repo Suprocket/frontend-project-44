@@ -4,20 +4,17 @@ import getRandom from '../utils.js';
 const gameRules = 'What is the result of the expression?';
 
 const playCalc = () => {
-  let randomNumber1 = 1;
-  let randomNumber2 = 1;
-  let randomOperation = '';
 
   const gameQuestion = () => {
-    randomNumber1 = getRandom();
-    randomNumber2 = getRandom();
+    const randomNumber1 = getRandom();
+    const randomNumber2 = getRandom();
 
     const arrOfOperations = ['+', '-', '*'];
     const randomNumOfOperation = Math.floor(
       Math.random() * arrOfOperations.length,
     );
 
-    randomOperation = arrOfOperations[randomNumOfOperation];
+    const randomOperation = arrOfOperations[randomNumOfOperation];
     const randomString = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
     return randomString;
   };
