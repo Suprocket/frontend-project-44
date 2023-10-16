@@ -1,9 +1,9 @@
 // func of randomNumbers Generator
 
 const getRandom = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; // Максимум и минимум включаются
+  const minimum = Math.ceil(min);
+  const maximum = Math.floor(max);
+  return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 };
 
 const primeOrNot = (number) => {
