@@ -29,11 +29,8 @@ const playCalc = () => {
         console.log('Error in switch/case of randomOperation');
         break;
     }
-
     return [gameQuestion, String(compAnswer)];
   } 
-
   engine(gameRules, gameData);
 };
-
 export default playCalc;
