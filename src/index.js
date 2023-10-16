@@ -33,7 +33,7 @@ const engine = (gameRules, gameData) => {
 
   return [
     gameRules,
-    gameData
+    gameData,
   ];
 };
 

@@ -3,7 +3,7 @@
 const getRandom = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+  return Math.floor(Math.random() * (max - min + 1)) + min; // Максимум и минимум включаются
 };
 
 const primeOrNot = (number) => {
@@ -16,4 +16,4 @@ const primeOrNot = (number) => {
   }
   return true;
 };
-export {getRandom, primeOrNot};
+export { getRandom, primeOrNot };

@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import {getRandom, primeOrNot} from '../modules.js';
+import { getRandom } from '../modules.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
@@ -18,7 +18,7 @@ const playGCD = () => {
     }
     compAnswer = randomNumber1 + randomNumber2;
     return [gameQuestion, String(compAnswer)];
-  }
+  };
   engine(gameRules, gameData);
 };
 export default playGCD;

@@ -1,10 +1,9 @@
 import engine from '../index.js';
-import {getRandom, primeOrNot} from '../modules.js';
+import { getRandom } from '../modules.js';
 
 const gameRules = 'What is the result of the expression?';
 
 const playCalc = () => {
-
   const gameData = () => {
     const randomNumber1 = getRandom(0, 100);
     const randomNumber2 = getRandom(0, 100);
@@ -30,7 +29,7 @@ const playCalc = () => {
         break;
     }
     return [gameQuestion, String(compAnswer)];
-  } 
+  };
   engine(gameRules, gameData);
 };
 export default playCalc;
