@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import getRandom from '../utils.js';
+import {getRandom, primeOrNot} from '../modules.js';
 
 const gameRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
