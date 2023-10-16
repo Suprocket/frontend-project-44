@@ -4,20 +4,11 @@ import getRandom from '../utils.js';
 const gameRules = 'Find the greatest common divisor of given numbers.';
 
 const playGCD = () => {
-
-  let randomNumber1 = 1;
-  let randomNumber2 = 1;
-
-  const gameQuestion = () => {
-    randomNumber1 = getRandom();
-    randomNumber2 = getRandom();
-
-    const randomString = `${randomNumber1} ${randomNumber2}`;
-    return randomString;
-  };
-
-  const compAnswer = (answer) => {
-    let compans = answer;
+  const gameData = () => {
+    let randomNumber1 = getRandom(0, 100);
+    let randomNumber2 = getRandom(0, 100);
+    const gameQuestion = `${randomNumber1} ${randomNumber2}`;
+    let compAnswer = '';
     while ((randomNumber1 !== 0) && (randomNumber2 !== 0)) {
       if (randomNumber1 > randomNumber2) {
         randomNumber1 %= randomNumber2;
@@ -25,11 +16,9 @@ const playGCD = () => {
         randomNumber2 %= randomNumber1;
       }
     }
-    compans = randomNumber1 + randomNumber2;
-    return String(compans);
-  };
-
-  engine(gameRules, gameQuestion, compAnswer);
+    compAnswer = randomNumber1 + randomNumber2;
+    return [gameQuestion, String(compAnswer)];
+  }
+  engine(gameRules, gameData);
 };
-
 export default playGCD;

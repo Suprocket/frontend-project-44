@@ -20,5 +20,4 @@ const playEven = () => {
   }
   engine(gameRules, gameData);
 };
-
 export default playEven;
