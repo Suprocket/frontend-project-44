@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 let correctAnswers = 0;
 
-const engine = (gameRules, gameQuestion, compAnswer) => {
+const engine = (gameRules, gameData) => {
   console.log('Welcome to the Brain Games!');
 
   const name = readlineSync.question('May I have your name?: ');
@@ -11,17 +11,16 @@ const engine = (gameRules, gameQuestion, compAnswer) => {
   console.log(gameRules);
 
   while (correctAnswers < 3) {
-    console.log(`Question: ${gameQuestion()}`);
+    const outOfData = gameData();
+    console.log(`Question: ${outOfData[0]}`);
     const userAnswer = (readlineSync.question('Your answer: '));
+    console.log(outOfData[1]);
 
-    if (userAnswer === compAnswer()) {
+    if (userAnswer === outOfData[1]) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer. Correct answer was '${compAnswer()}'`);
-
-      // Костыль ниже!!
-
+      console.log(`'${userAnswer}' is wrong answer. Correct answer was '${outOfData[1]}'`);
       correctAnswers = 4;
     }
   }
@@ -34,8 +33,7 @@ const engine = (gameRules, gameQuestion, compAnswer) => {
 
   return [
     gameRules,
-    gameQuestion,
-    compAnswer,
+    gameData
   ];
 };
 
