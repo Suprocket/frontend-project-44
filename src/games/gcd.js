@@ -7,7 +7,7 @@ const getNOD = (num1, num2) => {
   if (!num2) {
     return num1;
   }
-return getNOD(num2, num1 % num2);
+  return getNOD(num2, num1 % num2);
 };
 
 const playGCD = () => {
