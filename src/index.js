@@ -10,7 +10,9 @@ const engine = (gameRules, gameData) => {
 
   console.log(gameRules);
 
-  while (correctAnswers < 3) {
+  const completeRounds = 3;
+
+  while (correctAnswers < completeRounds) {
     const outOfData = gameData();
     console.log(`Question: ${outOfData[0]}`);
     const userAnswer = (readlineSync.question('Your answer: '));
@@ -21,7 +23,7 @@ const engine = (gameRules, gameData) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer. Correct answer was '${outOfData[1]}'`);
-      correctAnswers = 4;
+      correctAnswers = completeRounds;
     }
   }
 

@@ -10,15 +10,13 @@ const playGCD = () => {
     const gameQuestion = `${randomNumber1} ${randomNumber2}`;
     let compAnswer = '';
     while ((randomNumber1 !== 0) && (randomNumber2 !== 0)) {
-      if (randomNumber1 > randomNumber2) {
-        randomNumber1 %= randomNumber2;
-      } else {
-        randomNumber2 %= randomNumber1;
+      randomNumber1 > randomNumber2?randomNumber1 %= randomNumber2:randomNumber2 %= randomNumber1;
       }
-    }
-    compAnswer = randomNumber1 + randomNumber2;
+      compAnswer = randomNumber1 + randomNumber2;
     return [gameQuestion, String(compAnswer)];
+    }
+    engine(gameRules, gameData);
   };
-  engine(gameRules, gameData);
-};
+
+
 export default playGCD;
