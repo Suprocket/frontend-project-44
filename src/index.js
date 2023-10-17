@@ -22,15 +22,11 @@ const engine = (gameRules, gameData) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer. Correct answer was '${outOfData[1]}'`);
-      break;
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
   }
-
-  if (correctAnswers === completeRounds) {
-    console.log(`Congratulations, ${name}!`);
-  } else {
-    console.log(`Let's try again, ${name}!`);
-  }
+  console.log(`Congratulations, ${name}!`);
 
   return [
     gameRules,
