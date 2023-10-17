@@ -20,10 +20,18 @@ const primeOrNot = (number) => {
 const evenOrNot = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
 const getNOD = (num1, num2) => {
-  while (num1 && num2) {
-    num1 > num2 ? num1 %= num2 : num2 %= num1;
+  let number1 = num1;
+  let number2 = num2;
+  let total = 0;
+  while (number1 && number2) {
+    if (number1 > number2) {
+      number1 %= number2;
+    } else {
+      number2 %= number1;
+    }
+    total = number1 + number2;
   }
-  return num1 + num2;
+  return total;
 };
 
 export {

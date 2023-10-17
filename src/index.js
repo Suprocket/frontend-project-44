@@ -27,7 +27,7 @@ const engine = (gameRules, gameData) => {
     }
   }
 
-  if (correctAnswers === 3) {
+  if (correctAnswers === completeRounds) {
     console.log(`Congratulations, ${name}!`);
   } else {
     console.log(`Let's try again, ${name}!`);
