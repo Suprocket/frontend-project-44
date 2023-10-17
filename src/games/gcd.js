@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import { getRandom, getNOD } from '../modules.js';
+import getRandom from '../modules.js';
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
 

@@ -1,5 +1,5 @@
 import engine from '../index.js';
-import { getRandom } from '../modules.js';
+import getRandom from '../modules.js';
 
 const gameRules = 'What is the result of the expression?';
 
