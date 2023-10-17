@@ -23,7 +23,7 @@ const engine = (gameRules, gameData) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer. Correct answer was '${outOfData[1]}'`);
-      correctAnswers = completeRounds;
+      break;
     }
   }
 
