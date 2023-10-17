@@ -6,17 +6,6 @@ const getRandom = (min, max) => {
   return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 };
 
-const primeOrNot = (number) => {
-  if (number < 2) return false;
-  if (number === 4) return false;
-  for (let i = 2; i < number / 2; i += 1) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
-
 const getNOD = (num1, num2) => {
   let number1 = num1;
   let number2 = num2;
@@ -33,5 +22,5 @@ const getNOD = (num1, num2) => {
 };
 
 export {
-  getRandom, primeOrNot, getNOD,
+  getRandom, getNOD,
 };
