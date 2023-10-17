@@ -16,7 +16,6 @@ const engine = (gameRules, gameData) => {
     const outOfData = gameData();
     console.log(`Question: ${outOfData[0]}`);
     const userAnswer = (readlineSync.question('Your answer: '));
-    console.log(outOfData[1]);
 
     if (userAnswer === outOfData[1]) {
       correctAnswers += 1;
