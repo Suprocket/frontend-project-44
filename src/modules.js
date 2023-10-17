@@ -17,8 +17,6 @@ const primeOrNot = (number) => {
   return true;
 };
 
-const evenOrNot = (number) => (number % 2 === 0 ? 'yes' : 'no');
-
 const getNOD = (num1, num2) => {
   let number1 = num1;
   let number2 = num2;
@@ -35,5 +33,5 @@ const getNOD = (num1, num2) => {
 };
 
 export {
-  getRandom, primeOrNot, evenOrNot, getNOD,
+  getRandom, primeOrNot, getNOD,
 };
