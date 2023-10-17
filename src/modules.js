@@ -16,4 +16,7 @@ const primeOrNot = (number) => {
   }
   return true;
 };
-export { getRandom, primeOrNot };
+
+const evenOrNot = (number) => number % 2 === 0? 'yes': 'no';
+
+export { getRandom, primeOrNot, evenOrNot };
