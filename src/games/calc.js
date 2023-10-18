@@ -5,16 +5,16 @@ const gameRules = 'What is the result of the expression?';
 
 const calculation = (num1, operator, num2) => {
   switch (operator) {
-      case '+':
-        return num1 + num2;
-      case '-':
-        return num1 - num2;
-      case '*':
-        return num1 * num2;
-      default:
-        return false;
-    }
-}
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      return false;
+  }
+};
 
 const playCalc = () => {
   const gameData = () => {
