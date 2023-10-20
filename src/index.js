@@ -26,7 +26,8 @@ const engine = (gameRules, gameData) => {
       return undefined;
     }
   }
-  return `Congratulations, ${name}!`;
+  console.log(`Congratulations, ${name}!`);
+  return undefined;
 };
 
 export default engine;
