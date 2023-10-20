@@ -27,11 +27,6 @@ const engine = (gameRules, gameData) => {
     }
   }
   console.log(`Congratulations, ${name}!`);
-
-  return [
-    gameRules,
-    gameData,
-  ];
 };
 
 export default engine;
