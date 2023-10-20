@@ -23,7 +23,7 @@ const engine = (gameRules, gameData) => {
     } else {
       console.log(`'${userAnswer}' is wrong answer. Correct answer was '${outOfData[1]}'`);
       console.log(`Let's try again, ${name}!`);
-      return {};
+      return undefined;
     }
   }
   console.log(`Congratulations, ${name}!`);

@@ -14,7 +14,7 @@ const playPrime = () => {
   const gameData = () => {
     const randomNumber = getRandom(1, 100);
     const gameQuestion = randomNumber;
-    const compAnswer = isPrime(randomNumber) === true ? 'yes' : 'no';
+    const compAnswer = isPrime(randomNumber) ? 'yes' : 'no';
     return [gameQuestion, String(compAnswer)];
   };
   engine(gameRules, gameData);
