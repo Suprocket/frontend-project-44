@@ -22,12 +22,11 @@ const engine = (gameRules, gameData) => {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer. Correct answer was '${outOfData[1]}'`);
-      console.log(`Let's try again, ${name}!`);
-      return undefined;
+      break;
     }
   }
-  console.log(`Congratulations, ${name}!`);
-  return undefined;
+  const getResultInfo = correctAnswers === 3 ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
+  console.log(getResultInfo);
 };
 
 export default engine;
