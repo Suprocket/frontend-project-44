@@ -25,8 +25,8 @@ const engine = (gameRules, gameData) => {
       break;
     }
   }
-  const getResultInfo = correctAnswers === 3 ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
-  console.log(getResultInfo);
+  const ResultInfo = correctAnswers === 3 ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
+  console.log(ResultInfo);
 };
 
 export default engine;
