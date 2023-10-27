@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const gameRules = 'What is the result of the expression?';
+const gameInfo = 'What is the result of the expression?';
 
 const calculation = (num1, operator, num2) => {
   switch (operator) {
@@ -28,6 +28,6 @@ const playCalc = () => {
     const compAnswer = calculation(randomNumber1, randomOperation, randomNumber2);
     return [gameQuestion, String(compAnswer)];
   };
-  engine(gameRules, gameData);
+  engine(gameInfo, gameData);
 };
 export default playCalc;

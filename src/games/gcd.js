@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const gameRules = 'Find the greatest common divisor of given numbers.';
+const gameInfo = 'Find the greatest common divisor of given numbers.';
 
 const getNOD = (num1, num2) => {
   if (!num2) {
@@ -18,7 +18,7 @@ const playGCD = () => {
     const compAnswer = getNOD(randomNumber1, randomNumber2);
     return [gameQuestion, String(compAnswer)];
   };
-  engine(gameRules, gameData);
+  engine(gameInfo, gameData);
 };
 
 export default playGCD;

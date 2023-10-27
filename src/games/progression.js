@@ -1,7 +1,7 @@
 import engine from '../index.js';
 import getRandom from '../utils.js';
 
-const gameRules = 'What number is missing in the progression?';
+const gameInfo = 'What number is missing in the progression?';
 
 const playProgression = () => {
   const gameData = () => {
@@ -18,7 +18,7 @@ const playProgression = () => {
     const gameQuestion = arrOfNumbers.join(' ');
     return [gameQuestion, String(compAnswer)];
   };
-  engine(gameRules, gameData);
+  engine(gameInfo, gameData);
 };
 
 export default playProgression;
