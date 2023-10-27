@@ -3,20 +3,27 @@ import getRandom from '../utils.js';
 
 const gameInfo = 'What number is missing in the progression?';
 
+const generateProgression = (item, step, length) => {
+  const arrOfNumbers = [];
+  let firstNum = item;
+  for (let i = 0; i < length; i += 1) {
+    firstNum += step;
+    arrOfNumbers.push(firstNum);
+  }
+  return arrOfNumbers;
+};
+
 const playProgression = () => {
   const gameData = () => {
-    let randomNumber = getRandom(1, 100);
-    const arrOfNumbers = [];
-    const step = getRandom(1, 10);
-    const numsInArr = getRandom(5, 10);
-    for (let i = 0; i < numsInArr; i += 1) {
-      randomNumber += step;
-      arrOfNumbers.push(randomNumber);
-    }
-    const addIndexForPoints = getRandom(0, arrOfNumbers.length - 1);
-    const compAnswer = String(arrOfNumbers.splice(addIndexForPoints, 1, '..'));
-    const gameQuestion = arrOfNumbers.join(' ');
-    return [gameQuestion, String(compAnswer)];
+    const randomNumber = getRandom(1, 100);
+    const arrStep = getRandom(1, 10);
+    const arrLength = getRandom(5, 10);
+    const progression = generateProgression(randomNumber, arrStep, arrLength);
+    const addIndexForPoints = getRandom(0, progression.length - 1);
+    const compAnswer = String(progression.splice(addIndexForPoints, 1, '..'));
+    const gameQuestion = progression.join(' ');
+
+    return [gameQuestion, compAnswer];
   };
   engine(gameInfo, gameData);
 };

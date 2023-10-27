@@ -10,21 +10,18 @@ const engine = (gameInfo, gameData) => {
 
   console.log(gameInfo);
 
-  for(let i = 0; i < completeRounds; i += 1){
-    const outOfData = gameData();
-    console.log(`Question: ${outOfData[0]}`);
+  for (let correctAnswers = 0; correctAnswers < completeRounds; correctAnswers += 1) {
+    const [gameQuestion, compAnswer] = gameData();
+    console.log(`Question: ${gameQuestion}`);
     const userAnswer = (readlineSync.question('Your answer: '));
-    if (userAnswer === outOfData[1]) {
-      correctAnswers += 1;
-      console.log('Correct!');
-      } else {
-        console.log(`'${userAnswer}' is wrong answer. Correct answer was '${outOfData[1]}'`);
-        break;
-      }
+    if (userAnswer !== compAnswer) {
+      console.log(`'${userAnswer}' is wrong answer. Correct answer was '${compAnswer}'`);
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
+    console.log('Correct!');
   }
-  
-  const resultInfo = correctAnswers === 3 ? `Congratulations, ${name}!` : `Let's try again, ${name}!`;
-  console.log(resultInfo);
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default engine;
