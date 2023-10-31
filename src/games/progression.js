@@ -24,7 +24,6 @@ const playProgression = () => {
     const progression = generateProgression(randomNumber, arrStep, arrLength);
     const [arrOfNumbers, answerNumber] = progression;
     const compAnswer = String(answerNumber);
-    console.log(answerNumber);
     const gameQuestion = arrOfNumbers.join(' ');
 
     return [gameQuestion, compAnswer];
