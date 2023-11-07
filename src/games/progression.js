@@ -10,10 +10,7 @@ const generateProgression = (item, step, length) => {
     arrOfNumbers.push(item + i * step);
   }
 
-  const indexOfAnswer = getRandom(0, length - 1);
-  const answerNumber = arrOfNumbers.splice(indexOfAnswer, 1, '..');
-
-  return [arrOfNumbers, answerNumber];
+  return arrOfNumbers;
 };
 
 const playProgression = () => {
@@ -22,9 +19,10 @@ const playProgression = () => {
     const arrStep = getRandom(1, 10);
     const arrLength = getRandom(5, 10);
     const progression = generateProgression(randomNumber, arrStep, arrLength);
-    const [arrOfNumbers, answerNumber] = progression;
+    const indexOfAnswer = getRandom(0, arrLength - 1);
+    const answerNumber = progression.splice(indexOfAnswer, 1, '..');
     const compAnswer = String(answerNumber);
-    const gameQuestion = arrOfNumbers.join(' ');
+    const gameQuestion = progression.join(' ');
 
     return [gameQuestion, compAnswer];
   };
